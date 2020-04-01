@@ -5,19 +5,16 @@
         =current_user.name
       .side-bar__header__box__user-name__icon
         .side-bar__header__box__user-name__icon__edit
-        = link_to "#" do
-          %link{class: "far fa-edit"}
+        = link_to new_group_path do
+          =icon('far', 'edit', class: 'icon')
         .side-bar__header__box__user-name__icon__cog
         = link_to edit_user_path(current_user) do
           =icon('fas', 'cog', class: 'icon')
   .side-bar__groups
-    .side-bar__groups__group
-      .side-bar__groups__group__group-name
-        techcamp
-      .side-bar__groups__group__latest-message
-        まだメッセージがありません
-    .side-bar__groups__group
-      .side-bar__groups__group__group-name
-        techcamp
-      .side-bar__groups__group__latest-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-bar__groups__group
+        =link_to '#' do
+          .side-bar__groups__group__group-name
+            = group.name
+          .side-bar__groups__group__latest-message
+            まだメッセージがありません
