@@ -2,14 +2,14 @@
   .side-bar__header
     .side-bar__header__box
       .side-bar__header__box__user-name
-        yuya
+        =current_user.name
       .side-bar__header__box__user-name__icon
         .side-bar__header__box__user-name__icon__edit
         = link_to "#" do
           %link{class: "far fa-edit"}
         .side-bar__header__box__user-name__icon__cog
-        = link_to "#" do
-          %link{class: "fas fa-cog"}
+        = link_to edit_user_path(current_user) do
+          =icon('fas', 'cog', class: 'icon')
   .side-bar__groups
     .side-bar__groups__group
       .side-bar__groups__group__group-name
