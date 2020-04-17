@@ -4,8 +4,10 @@
       .main-chat__header__left-box__group
         = @group.name
       .main-chat__header__left-box__member
-        - @group.users.each do |user|
-          = user.name
+        Member :
+        .main-chat__header__left-box__member__right
+          - @group.users.each do |user|
+            = user.name
     .main-chat__header__right-box
       = link_to edit_group_path(@group) do
         Edit

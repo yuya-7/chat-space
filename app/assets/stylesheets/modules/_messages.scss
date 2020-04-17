@@ -79,6 +79,11 @@
       &__member {
         color: #999999;
         font-size: 12px;
+        display: flex;
+        &__right {
+          font-size: 11px;
+          color: #999999;
+        }
       }
     }
     &__right-box {
